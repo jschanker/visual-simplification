@@ -1,0 +1,63 @@
+/* Custom font is usually set by the page itself, but good to keep in mind for general styling */
+/* body {
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+    color: #333;
+} */
+
+/* Styles for the dynamically created magnifier element */
+#dynamic-magnifier {
+    position: absolute; /* Crucial for preventing reflow */
+    background-color: white;
+    border: 2px solid #2563eb; /* blue-500 */
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-xl */
+    z-index: 9999; /* Ensure it's on top of everything */
+    opacity: 0; /* Hidden by default */
+    transform: scale(0.8); /* Slightly scaled down when hidden */
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out; /* Smooth transition */
+    pointer-events: none; /* Allows mouse events to pass through */
+    font-size: 72px;/*1.5rem;*/ /* Magnified font size - will be overridden by JS for 72px */
+    font-weight: bold;
+    color: #1d4ed8; /* blue-700 */
+    text-align: center;
+    display: inline-block; /* Ensures padding and border work as expected */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    /* white-space: nowrap; and transform: scale(1.5) are handled by JS now, but left commented for context */
+    overflow: hidden;/*scroll;*/ /* Added by user to prevent content overflow in the box */
+    /*height: fit-content;
+    width: fit-content;*/
+    line-height: 1;
+}
+
+#dynamic-magnifier.active {
+    opacity: 1;
+    /* transform: scale(1.5); handled by JS */
+}
+
+/* Style for the wrapped word spans */
+.magnifiable-word {
+    display: inline; /* Keep words on the same line */
+    /* You can add subtle hover effects here if desired, e.g., background-color */
+    /* transition: background-color 0.1s ease-in-out; */
+}
+/* .magnifiable-word:hover {
+    background-color: #e0f2fe; /* light blue background on hover */
+/* } */
+
+/* Apply the custom cursor to the body */
+body {
+    /* Cursor Author home page: https://www.youtube.com/channel/UCcp_XutZAcfJ2tzuNbN3EHw */
+   /* From https://www.rw-designer.com/cursor-detail/108828 */
+    cursor: url('chrome-extension://__MSG_@@extension_id__/assets/Normal_Select.cur'), default !important;
+}
+
+a {
+    /* Cursor Author home page: https://www.youtube.com/channel/UCcp_XutZAcfJ2tzuNbN3EHw */
+/* From https://www.rw-designer.com/cursor-detail/108842 */
+    cursor: url('chrome-extension://__MSG_@@extension_id__/assets/Link_Select.cur'), default !important;
+
+}
+
+
